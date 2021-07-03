@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital@1&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.baloons {
+  width: 400px;
+  -webkit-animation: bright2 2s ease-out;
+  z-index: 0;
+}
+
+.img-baloons {
+  visibility: visible;
+  position: absolute;
+  width: 30vw;
+  top: 10px;
+  -webkit-animation: moveBaloons 2s ease;
+  z-index: 1;
+}
+
+.img-baloons::after {
+  visibility: hidden;
+}
+
+#card-container {
+  display: flex;
+  padding: 1.2rem;
+  height: 100vh;
+  background-color: rgb(47, 47, 63);
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+  margin: 0.7rem;
+  padding: 1.2rem;
+  background-color: #add8e6;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-after {
+  z-index: 7;
+}
+
+.img-before {
+  z-index: 5;
+}
+
+.paper {
+  cursor: pointer;
+  position: absolute;
+  z-index: 6;
+  padding: 1rem;
+  background-color: white;
+  width: 32em;
+  height: 180px;
+  bottom: 290px;
+  text-align: center;
+  -webkit-animation: movePaper 2s ease;
+}
+
+.img-after,
+.img-before {
+  position: absolute;
+  -webkit-animation: bright 2s ease-out;
+  
+}
+
+.paper h1 {
+    margin: 0.3rem;
+  z-index: 9;
+  color: #c4c4c4;
+  text-shadow: 2px 2px #ff0000;
+  font-size: calc(1em + 1vw);
+  font-family: "Dancing Script", cursive;
+}
+
+.paper p {
+  color: #000000;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: calc(0.5em + 0.8vw);
+}
+
+@keyframes moveBaloons {
+  0% {
+    top: 400px;
+  }
+  100% {
+    top: -278px;
+  }
+}
+
+@keyframes movePaper {
+  0% {
+    height: 10vh;
+    bottom: 200px;
+  }
+  100% {
+    bottom: 290px;
+  }
+}
+
+@keyframes bright {
+  0% {
+    filter: brightness(0%);
+  }
+  10% {
+    filter: brightness(10%);
+  }
+  20% {
+    filter: brightness(20%);
+  }
+  30% {
+    filter: brightness(30%);
+  }
+  40% {
+    filter: brightness(40%);
+  }
+  50% {
+    filter: brightness(50%);
+  }
+  60% {
+    filter: brightness(60%);
+  }
+  70% {
+    filter: brightness(70%);
+  }
+  78% {
+    filter: brightness(80%);
+  }
+  90% {
+    filter: brightness(90%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+@keyframes bright2 {
+  0% {
+    filter: brightness(0%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-content {
+    background-color: #add8e6;
+  }
+  .img-after {
+    z-index: 7;
+  }
+  .img-before {
+    z-index: 5;
+  }
+  .baloons {
+    width: 150px;
+  }
+  .front-card,
+  .back-card {
+    width: 60vw;
+    height: 30vh;
+  }
+  .paper {
+    width: 59vw;
+    height: 180px;
+    bottom: 290px;
+  }
+  .paper p {
+    font-size: calc(0.5em + 1vw);
+  }
+}
